@@ -30,14 +30,22 @@ namespace HumaneSociety
             if (arrival != null)
                 this.arrival = arrival;
             else
-                arrival = DateTime.Today;
+                arrival = DateTime.Now;
             this.price = price;
             theseTraits = new Traits(color, height, weight, activityLevel);
             thisHealth = new Health(age, shotsDate, foodType, foodConsumptionPerWeek, dishSize, spaceNeeds);
             AnimalRepository myAnimalRepository = new AnimalRepository();
             myAnimalRepository.InsertAnimal(this);
         }
-
-
+        public Animal(string name, string type, double price, DateTime arrival, string color, int height, int weight, int activityLevel, int age, DateTime? shotsDate, string foodType, int foodConsumptionPerWeek, int dishSize, int spaceNeeds, int animalId)
+        {
+            this.name = name;
+            this.type = type;
+            this.arrival = arrival;
+            this.price = price;
+            theseTraits = new Traits(color, height, weight, activityLevel);
+            thisHealth = new Health(age, shotsDate, foodType, foodConsumptionPerWeek, dishSize, spaceNeeds);
+            this.animalId = animalId;
+        }
     }
 }

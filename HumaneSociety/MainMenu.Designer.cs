@@ -30,10 +30,9 @@
         {
             this.AddButton = new System.Windows.Forms.Button();
             this.AdoptButton = new System.Windows.Forms.Button();
-            this.CheckBotton = new System.Windows.Forms.Button();
-            this.SearchButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.MassAddButton = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddButton
@@ -48,30 +47,12 @@
             // 
             // AdoptButton
             // 
-            this.AdoptButton.Location = new System.Drawing.Point(52, 159);
+            this.AdoptButton.Location = new System.Drawing.Point(52, 178);
             this.AdoptButton.Name = "AdoptButton";
             this.AdoptButton.Size = new System.Drawing.Size(401, 65);
             this.AdoptButton.TabIndex = 1;
             this.AdoptButton.Text = "Adopt Animal";
             this.AdoptButton.UseVisualStyleBackColor = true;
-            // 
-            // CheckBotton
-            // 
-            this.CheckBotton.Location = new System.Drawing.Point(52, 237);
-            this.CheckBotton.Name = "CheckBotton";
-            this.CheckBotton.Size = new System.Drawing.Size(401, 65);
-            this.CheckBotton.TabIndex = 2;
-            this.CheckBotton.Text = "Check Animal";
-            this.CheckBotton.UseVisualStyleBackColor = true;
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.Location = new System.Drawing.Point(52, 316);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(401, 65);
-            this.SearchButton.TabIndex = 3;
-            this.SearchButton.Text = "Search Animals";
-            this.SearchButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -85,13 +66,23 @@
             // 
             // MassAddButton
             // 
-            this.MassAddButton.Location = new System.Drawing.Point(52, 396);
+            this.MassAddButton.Location = new System.Drawing.Point(52, 375);
             this.MassAddButton.Name = "MassAddButton";
             this.MassAddButton.Size = new System.Drawing.Size(401, 65);
             this.MassAddButton.TabIndex = 5;
             this.MassAddButton.Text = "Mass Add Animals";
             this.MassAddButton.UseVisualStyleBackColor = true;
             this.MassAddButton.Click += new System.EventHandler(this.MassAddButton_Click);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Location = new System.Drawing.Point(52, 277);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(401, 65);
+            this.SearchButton.TabIndex = 3;
+            this.SearchButton.Text = "Search Animals";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // WelcomeMenu
             // 
@@ -101,7 +92,6 @@
             this.Controls.Add(this.MassAddButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.CheckBotton);
             this.Controls.Add(this.AdoptButton);
             this.Controls.Add(this.AddButton);
             this.Name = "WelcomeMenu";
@@ -115,10 +105,9 @@
 
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button AdoptButton;
-        private System.Windows.Forms.Button CheckBotton;
-        private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button MassAddButton;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
 
