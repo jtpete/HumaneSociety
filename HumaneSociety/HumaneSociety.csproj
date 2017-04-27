@@ -52,6 +52,12 @@
     <Compile Include="AddAnimalForm.Designer.cs">
       <DependentUpon>AddAnimalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animal.cs" />
+    <Compile Include="AnimalHealthRepository.cs" />
+    <Compile Include="AnimalRepository.cs" />
+    <Compile Include="AnimalTraitRepository.cs" />
+    <Compile Include="Rooms.cs" />
+    <Compile Include="Health.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RoomRepository.cs" />
+    <Compile Include="Traits.cs" />
     <EmbeddedResource Include="AddAnimalForm.resx">
       <DependentUpon>AddAnimalForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,19 +14,43 @@ namespace HumaneSociety
 
         public void InsertAnimal(Animal anAnimal)
         {
+            AnimalHealthRepository myAnimalHealth = new AnimalHealthRepository();
+            AnimalTraitRepository myAnimalTraits = new AnimalTraitRepository();
+            InsertIntoAnimal(anAnimal);
+            GetAnimalId(anAnimal);
+            myAnimalTraits.InsertIntoAnimalTraits(anAnimal);
+            myAnimalHealth.InsertIntoAnimalHealth(anAnimal);
+        }
+        public void InsertIntoAnimal(Animal anAnimal)
+        {
             try
             {
-                int count = 0;
-                string insertQuery = BuildInsertString(anAnimal);
+                string insertQuery = $"INSERT INTO Animal (Animal_Type, Name, Arrival_Date, Price) VALUES ('{anAnimal.Type}','{anAnimal.Name}', '{anAnimal.Arrival.Value.ToString("yyyy-MM-dd HH:mm:ss tt")}', {anAnimal.Price})";
                 mydb.Open();
                 SqlCommand myAdd = new SqlCommand(insertQuery, mydb);
-                IAsyncResult result = myAdd.BeginExecuteNonQuery();
-                while (!result.IsCompleted)
+                 myAdd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                mydb.Close();
+            }
+        }
+        public void GetAnimalId(Animal anAnimal)
+        {
+            try
+            {
+                mydb.Open();
+                string query = $"SELECT Animal_Id FROM Animal WHERE Arrival_Date = '{anAnimal.Arrival.Value.ToString("yyyy-MM-dd HH:mm:ss tt")}'";
+                SqlCommand myCmd = new SqlCommand(query, mydb);
+                SqlDataReader myReader = myCmd.ExecuteReader();
+                while (myReader.Read())
                 {
-                    Console.WriteLine("Waiting for DB Write {0}", count++);
-                    Thread.Sleep(1000);
+                    anAnimal.AnimalId = myReader.GetInt32(0);
                 }
-                myAdd.EndExecuteNonQuery(result);
             }
             catch (Exception e)
             {
@@ -38,11 +62,9 @@ namespace HumaneSociety
             }
         }
 
-        private string BuildInsertString(Animal anAnimal)
-        {
-            string insert = $"INSERT INTO HumaneSociety (Animal_Type, Name, Arrival_Date) VALUES ('{anAnimal.Type}','{anAnimal.Name}', '{anAnimal.Arrival.ToString("yyyy-MM-dd HH:mm:ss tt")}')";
-            return insert;
-        }
+
+
+
     }
 
 

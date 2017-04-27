@@ -12,13 +12,14 @@ namespace HumaneSociety
         public int Age { get { return age; } set { age = value; } }
         private bool hadShots = false;
         public bool HadShots { get { return hadShots; } }
-        private DateTime shotsDate = new DateTime();
-        public DateTime ShotsDate { get { return shotsDate; } }
+        private DateTime? shotsDate = new DateTime();
+        public DateTime? ShotsDate { get { return shotsDate; } }
         private string foodType;
         public string FoodType { get { return foodType; } }
         private int foodConsumptionPerWeek;
         public int FoodConsumptionPerWeek { get { return foodConsumptionPerWeek; } }
         private int dishSize;
+        public int DishSize { get { return dishSize; } }
         private bool isSmallDish = false;
         public bool IsSmallDish { get { return isSmallDish; } }
         private bool isMediumDish = false;
@@ -28,6 +29,7 @@ namespace HumaneSociety
         private bool isXLDish = false;
         public bool IsXLDish { get { return isXLDish; } }
         private int spaceNeeds;
+        public int SpaceNeeds { get { return spaceNeeds; } }
         private bool smallSpace = false;
         public bool SmallSpace { get { return smallSpace; } }
         private bool mediumSpace = false;
@@ -37,10 +39,12 @@ namespace HumaneSociety
         private bool xlSpace = false;
         public bool XlSpace { get { return xlSpace; } }
 
-        public Health(int age, DateTime shotsDate, string foodType, int foodConsumptionPerWeek, int dishSize, int spaceNeeds)
+        public Health(int age, DateTime? shotsDate, string foodType, int foodConsumptionPerWeek, int dishSize, int spaceNeeds)
         {
             this.age = age;
             this.shotsDate = shotsDate;
+            if (this.shotsDate != null)
+                hadShots = true;
             this.foodType = foodType;
             this.foodConsumptionPerWeek = foodConsumptionPerWeek;
             this.dishSize = dishSize;

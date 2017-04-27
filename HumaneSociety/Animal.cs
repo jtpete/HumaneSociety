@@ -14,14 +14,16 @@ namespace HumaneSociety
         public string Type { get { return type; } set { type = value; } }
         private string name;
         public string Name { get { return name; } set { name = value; } }
-        private DateTime arrival = new DateTime();
-        public DateTime Arrival { get { return arrival; } set { arrival = value; } }
+        private double price;
+        public double Price { get { return price; } set { price = value; } }
+        private DateTime? arrival = new DateTime();
+        public DateTime? Arrival { get { return arrival; } set { arrival = value; } }
         private Traits theseTraits;
         public Traits TheseTraits { get { return theseTraits; } }
         private Health thisHealth;
         public Health ThisHealth { get { return thisHealth; } }
 
-        public Animal(string name, string type, DateTime arrival, string color, int height, int weight, int activityLevel, int age, DateTime shotsDate, string foodType, int foodConsumptionPerWeek, int dishSize, int spaceNeeds)
+        public Animal(string name, string type, double price, DateTime arrival, string color, int height, int weight, int activityLevel, int age, DateTime? shotsDate, string foodType, int foodConsumptionPerWeek, int dishSize, int spaceNeeds)
         {
             this.name = name;
             this.type = type;
@@ -29,9 +31,11 @@ namespace HumaneSociety
                 this.arrival = arrival;
             else
                 arrival = DateTime.Today;
+            this.price = price;
             theseTraits = new Traits(color, height, weight, activityLevel);
             thisHealth = new Health(age, shotsDate, foodType, foodConsumptionPerWeek, dishSize, spaceNeeds);
-
+            AnimalRepository myAnimalRepository = new AnimalRepository();
+            myAnimalRepository.InsertAnimal(this);
         }
 
 

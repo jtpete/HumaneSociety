@@ -9,6 +9,7 @@ namespace HumaneSociety
     public class Traits
     {
         private int activityLevel;
+        public int ActivityLevel { get { return activityLevel; } }
         private bool lowActive = false;
         public bool LowActive { get { return lowActive; } }
         private bool medActive = false;
