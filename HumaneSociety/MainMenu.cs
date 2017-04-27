@@ -22,5 +22,11 @@ namespace HumaneSociety
             AddAnimalForm form = new AddAnimalForm();
             form.Show();
         }
+
+        private void MassAddButton_Click(object sender, EventArgs e)
+        {
+            MassAddAnimals form = new MassAddAnimals();
+            form.Show();
+        }
     }
 }

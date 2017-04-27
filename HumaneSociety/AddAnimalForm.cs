@@ -84,6 +84,7 @@ namespace HumaneSociety
                 validAge &&
                 validArrivalDate &&
                 validFood &&
+                validShots &&
                 validDishSize &&
                 validConsumption &&
                 validSpaceNeeds &&
@@ -106,6 +107,7 @@ namespace HumaneSociety
             CheckArrivalDateField();
             CheckFoodField();
             CheckColorField();
+            CheckShotsField();
             CheckAgeField();
             CheckDishSizeField();
             CheckConsumptionField();

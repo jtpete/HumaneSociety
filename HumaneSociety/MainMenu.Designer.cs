@@ -33,11 +33,12 @@
             this.CheckBotton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.MassAddButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(52, 102);
+            this.AddButton.Location = new System.Drawing.Point(52, 83);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(401, 65);
             this.AddButton.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // AdoptButton
             // 
-            this.AdoptButton.Location = new System.Drawing.Point(52, 187);
+            this.AdoptButton.Location = new System.Drawing.Point(52, 159);
             this.AdoptButton.Name = "AdoptButton";
             this.AdoptButton.Size = new System.Drawing.Size(401, 65);
             this.AdoptButton.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // CheckBotton
             // 
-            this.CheckBotton.Location = new System.Drawing.Point(52, 277);
+            this.CheckBotton.Location = new System.Drawing.Point(52, 237);
             this.CheckBotton.Name = "CheckBotton";
             this.CheckBotton.Size = new System.Drawing.Size(401, 65);
             this.CheckBotton.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(52, 372);
+            this.SearchButton.Location = new System.Drawing.Point(52, 316);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(401, 65);
             this.SearchButton.TabIndex = 3;
@@ -82,11 +83,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "WELCOME";
             // 
+            // MassAddButton
+            // 
+            this.MassAddButton.Location = new System.Drawing.Point(52, 396);
+            this.MassAddButton.Name = "MassAddButton";
+            this.MassAddButton.Size = new System.Drawing.Size(401, 65);
+            this.MassAddButton.TabIndex = 5;
+            this.MassAddButton.Text = "Mass Add Animals";
+            this.MassAddButton.UseVisualStyleBackColor = true;
+            this.MassAddButton.Click += new System.EventHandler(this.MassAddButton_Click);
+            // 
             // WelcomeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 508);
+            this.Controls.Add(this.MassAddButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.CheckBotton);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Button CheckBotton;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button MassAddButton;
     }
 }
 

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +57,14 @@
     <Compile Include="AnimalHealthRepository.cs" />
     <Compile Include="AnimalRepository.cs" />
     <Compile Include="AnimalTraitRepository.cs" />
+    <Compile Include="MassAddAnimals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MassAddAnimals.Designer.cs">
+      <DependentUpon>MassAddAnimals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Record.cs" />
+    <Compile Include="Records.cs" />
     <Compile Include="Rooms.cs" />
     <Compile Include="Health.cs" />
     <Compile Include="MainMenu.cs">
@@ -71,6 +80,9 @@
     <Compile Include="Traits.cs" />
     <EmbeddedResource Include="AddAnimalForm.resx">
       <DependentUpon>AddAnimalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MassAddAnimals.resx">
+      <DependentUpon>MassAddAnimals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
