@@ -11,9 +11,9 @@ namespace HumaneSociety
         private int age;
         public int Age { get { return age; } set { age = value; } }
         private bool hadShots = false;
-        public bool HadShots { get { return hadShots; } }
+        public bool HadShots { get { return hadShots; } set { hadShots = value; } }
         private DateTime? shotsDate = new DateTime();
-        public DateTime? ShotsDate { get { return shotsDate; } }
+        public DateTime? ShotsDate { get { return shotsDate; } set { shotsDate = value; } }
         private string foodType;
         public string FoodType { get { return foodType; } }
         private int foodConsumptionPerWeek;

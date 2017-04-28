@@ -12,14 +12,16 @@ namespace HumaneSociety
 {
     public partial class SearchForm : Form
     {
+        AnimalControl animals;
+
         public SearchForm()
         {
+            animals = new AnimalControl();
             InitializeComponent();
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
         {
-            AnimalControl animals = new AnimalControl();
             List<DisplayAnimal> displayAnimals = new List<DisplayAnimal>();
             displayAnimals.AddRange(animals.OurAnimals.Select(a => { return new DisplayAnimal(a); }));
             SearchResultsTable.DataSource = displayAnimals;
@@ -32,7 +34,6 @@ namespace HumaneSociety
 
         private void RefineButton_Click(object sender, EventArgs e)
         {
-            AnimalControl animals = new AnimalControl();
             List<DisplayAnimal> displayAnimals = new List<DisplayAnimal>();
             displayAnimals.AddRange(animals.OurAnimals.Where(a =>
             {
@@ -76,6 +77,31 @@ namespace HumaneSociety
                     return false;
             }).Select(a => { return new DisplayAnimal(a); }));
             SearchResultsTable.DataSource = displayAnimals;
+        }
+
+        private void ChooseButton_Click(object sender, EventArgs e)
+        {
+            int animalIdProvide = 0;
+            if(AnimalIdText.Text == "")
+            {
+                AnimalIdLabel.BackColor = Color.Red;
+            }
+            else
+            {
+                try
+                {
+                    animalIdProvide = int.Parse(AnimalIdText.Text);
+                    AnimalDetailsForm detailsForm = new AnimalDetailsForm(animals.OurAnimals.Where(a => a.AnimalId == animalIdProvide).Select(a => a.AnimalId).Single());
+                    detailsForm.Show();
+                    this.Close();
+                }
+                catch
+                {
+                    AnimalIdLabel.BackColor = Color.Red;
+                }
+
+            }
+
         }
     }
 }

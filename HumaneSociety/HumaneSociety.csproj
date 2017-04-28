@@ -60,6 +60,12 @@
     <Compile Include="AnimalTraitRepository.cs" />
     <Compile Include="DisplayAnimal.cs" />
     <Compile Include="DisplayRoom.cs" />
+    <Compile Include="AnimalDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimalDetail.Designer.cs">
+      <DependentUpon>AnimalDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </Compile>
     <EmbeddedResource Include="AddAnimalForm.resx">
       <DependentUpon>AddAnimalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnimalDetail.resx">
+      <DependentUpon>AnimalDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>

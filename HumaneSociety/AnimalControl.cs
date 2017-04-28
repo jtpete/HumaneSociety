@@ -21,6 +21,19 @@ namespace HumaneSociety
             ourRooms = rooms.GetAllRoomsWithAnimalNames();
         }
 
+        public void GiveShot(int animalId)
+        {
+            Animal thisAnimal = ourAnimals.Where(a => a.AnimalId == animalId).Select(a =>
+            {
+                a.ThisHealth.ShotsDate = DateTime.Now;
+                a.ThisHealth.HadShots = true;
+                return a;
+
+            }).Single();
+            AnimalHealthRepository health = new AnimalHealthRepository();
+            health.UpdateAnimalShot(thisAnimal);
+        }
+
 
     }
 }

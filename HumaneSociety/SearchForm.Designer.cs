@@ -35,7 +35,7 @@
             this.ColorBox = new System.Windows.Forms.TextBox();
             this.ShotsCheckBox = new System.Windows.Forms.CheckBox();
             this.AnimalIdLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AnimalIdText = new System.Windows.Forms.TextBox();
             this.ChooseButton = new System.Windows.Forms.Button();
             this.DoneButton = new System.Windows.Forms.Button();
             this.RefineButton = new System.Windows.Forms.Button();
@@ -109,12 +109,12 @@
             this.AnimalIdLabel.TabIndex = 15;
             this.AnimalIdLabel.Text = "Animal ID";
             // 
-            // textBox1
+            // AnimalIdText
             // 
-            this.textBox1.Location = new System.Drawing.Point(966, 351);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 22);
-            this.textBox1.TabIndex = 16;
+            this.AnimalIdText.Location = new System.Drawing.Point(966, 351);
+            this.AnimalIdText.Name = "AnimalIdText";
+            this.AnimalIdText.Size = new System.Drawing.Size(208, 22);
+            this.AnimalIdText.TabIndex = 16;
             // 
             // ChooseButton
             // 
@@ -124,6 +124,7 @@
             this.ChooseButton.TabIndex = 17;
             this.ChooseButton.Text = "Choose Animal";
             this.ChooseButton.UseVisualStyleBackColor = true;
+            this.ChooseButton.Click += new System.EventHandler(this.ChooseButton_Click);
             // 
             // DoneButton
             // 
@@ -153,7 +154,7 @@
             this.Controls.Add(this.RefineButton);
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.ChooseButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AnimalIdText);
             this.Controls.Add(this.AnimalIdLabel);
             this.Controls.Add(this.ShotsCheckBox);
             this.Controls.Add(this.TypeBox);
@@ -179,7 +180,7 @@
         private System.Windows.Forms.TextBox ColorBox;
         private System.Windows.Forms.CheckBox ShotsCheckBox;
         private System.Windows.Forms.Label AnimalIdLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AnimalIdText;
         private System.Windows.Forms.Button ChooseButton;
         private System.Windows.Forms.Button DoneButton;
         private System.Windows.Forms.Button RefineButton;

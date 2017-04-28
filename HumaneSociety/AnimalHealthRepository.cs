@@ -29,6 +29,25 @@ namespace HumaneSociety
                 mydb.Close();
             }
         }
+        public void UpdateAnimalShot(Animal animal)
+        {
+            try
+            {
+                string query = $"UPDATE Health SET Shots_Date = '{animal.ThisHealth.ShotsDate.Value.ToString("yyyy-MM-dd HH:mm:ss tt")}' WHERE Animal_Id = '{animal.AnimalId}'";
+                mydb.Open();
+                SqlCommand myUpdate = new SqlCommand(query, mydb);
+                myUpdate.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                mydb.Close();
+            }
+
+        }
 
     }
 }
