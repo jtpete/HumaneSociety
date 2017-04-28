@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Threading;
 using Microsoft.VisualBasic.FileIO;
 using System.Text;
 
 using System.Threading.Tasks;
+using System.IO;
 
 namespace HumaneSociety
 {
     public class Records
     {
         List<Record> validRecords;
+        public List<Record> ValidRecords { get { return validRecords; } }
         List<Record> noRoomRecords;
         private List<string[]> invalidRecords;
         public List<string[]> InvalidRecords { get { return invalidRecords; } }
@@ -24,23 +28,20 @@ namespace HumaneSociety
         {
             try
             {
+                var cvsFile = File.ReadAllLines(file).Select(x => x.Split(',')).ToList(); ;
                 Record aRecord;
-                TextFieldParser parser = new TextFieldParser(file);
-                parser.TextFieldType = FieldType.Delimited;
-                parser.SetDelimiters(",");
-                while (!parser.EndOfData)
+                cvsFile.ForEach(r =>
                 {
-                    string[] field = parser.ReadFields();
                     aRecord = new Record();
-                    if (aRecord.ValidAddInput(field))
+                    if (aRecord.ValidAddInput(r))
                     {
                         validRecords.Add(aRecord);
                     }
                     else
                     {
-                        invalidRecords.Add(field);
+                        invalidRecords.Add(r);
                     }
-                }
+                });
             }
             catch (Exception e)
             {

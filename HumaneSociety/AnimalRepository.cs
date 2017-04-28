@@ -74,8 +74,6 @@ namespace HumaneSociety
                 
                 while (mR.Read())
                 {
-               //     if (((DateTime.Now).Year - (mR.GetDateTime(12)).Year) > 100 )
-
                     aAnimal = new Animal(mR.GetSqlString(2).ToString(), mR.GetSqlString(1).ToString(), double.Parse(mR.GetSqlMoney(4).ToString()), mR.GetDateTime(3), mR.GetSqlString(7).ToString(), mR.GetInt32(9), mR.GetInt32(8), mR.GetInt32(6), mR.GetInt32(18), (((DateTime.Now).Year - (mR.GetDateTime(12)).Year) > 100) ? null : (DateTime?)mR.GetDateTime(12), mR.GetSqlString(13).ToString(), mR.GetInt32(14), mR.GetInt32(15), mR.GetInt32(16), mR.GetInt32(0));
                     animals.Add(aAnimal);
                 }

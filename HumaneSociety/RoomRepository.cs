@@ -79,6 +79,53 @@ namespace HumaneSociety
             {
                 mydb.Close();
             }
+
+        }
+        public List<DisplayRoom> GetAllRoomsWithAnimalNames()
+        {
+            List<DisplayRoom> rooms = new List<DisplayRoom>();
+            string query = $"SELECT Room.Name, Room.Animal_Id, Animal.Animal_Type, Animal.Name FROM Room LEFT JOIN Animal ON Room.Animal_Id = Animal.Animal_Id";
+            DisplayRoom aRoom;
+            try
+            {
+                mydb.Open();
+                SqlCommand myCmd = new SqlCommand(query, mydb);
+                SqlDataReader mR = myCmd.ExecuteReader();
+                string animalName = "";
+                string animalType = "";
+                int animalId = 0;
+
+                while (mR.Read())
+                {
+
+                    if (mR.GetSqlString(3).IsNull)
+                        animalName = "";
+                    else
+                        animalName = mR.GetSqlString(3).ToString();
+
+                    if (mR.GetSqlString(2).IsNull)
+                        animalType = "";
+                    else
+                        animalType = mR.GetSqlString(2).ToString();
+
+                    if (mR.IsDBNull(1))
+                        animalId = 0;
+                    else
+                        animalId = mR.GetInt32(1);
+
+                    aRoom = new DisplayRoom(mR.GetSqlString(0).ToString(), animalName, animalType, animalId);
+                    rooms.Add(aRoom);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                mydb.Close();
+            }
+            return rooms;
         }
     }
 }

@@ -39,7 +39,7 @@ namespace HumaneSociety
             List<Record> validRecords = new List<Record>();
             cvsFile = FileNameBox.Text;
             validRecords = theseRecords.ReadInputFile(cvsFile);
-            if(validRecords.Count() > 0)
+            if (validRecords.Count() > 0)
             {
                DialogResult result = MessageBox.Show($"There were {validRecords.Count()} with proper paperwork.  Add these animals to your Humane Society facility if there is space?", "Mass Add", MessageBoxButtons.OKCancel);
                 if(result == DialogResult.OK)

@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.MassAddButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.ViewRoomsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddButton
@@ -47,7 +48,7 @@
             // 
             // AdoptButton
             // 
-            this.AdoptButton.Location = new System.Drawing.Point(52, 178);
+            this.AdoptButton.Location = new System.Drawing.Point(52, 163);
             this.AdoptButton.Name = "AdoptButton";
             this.AdoptButton.Size = new System.Drawing.Size(401, 65);
             this.AdoptButton.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             // MassAddButton
             // 
-            this.MassAddButton.Location = new System.Drawing.Point(52, 375);
+            this.MassAddButton.Location = new System.Drawing.Point(52, 406);
             this.MassAddButton.Name = "MassAddButton";
             this.MassAddButton.Size = new System.Drawing.Size(401, 65);
             this.MassAddButton.TabIndex = 5;
@@ -76,7 +77,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(52, 277);
+            this.SearchButton.Location = new System.Drawing.Point(52, 244);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(401, 65);
             this.SearchButton.TabIndex = 3;
@@ -84,11 +85,22 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // ViewRoomsButton
+            // 
+            this.ViewRoomsButton.Location = new System.Drawing.Point(52, 324);
+            this.ViewRoomsButton.Name = "ViewRoomsButton";
+            this.ViewRoomsButton.Size = new System.Drawing.Size(401, 65);
+            this.ViewRoomsButton.TabIndex = 6;
+            this.ViewRoomsButton.Text = "View Rooms";
+            this.ViewRoomsButton.UseVisualStyleBackColor = true;
+            this.ViewRoomsButton.Click += new System.EventHandler(this.ViewRoomsButton_Click);
+            // 
             // WelcomeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 508);
+            this.Controls.Add(this.ViewRoomsButton);
             this.Controls.Add(this.MassAddButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchButton);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button MassAddButton;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button ViewRoomsButton;
     }
 }
 

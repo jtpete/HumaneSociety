@@ -34,5 +34,11 @@ namespace HumaneSociety
             SearchForm form = new SearchForm();
             form.Show();
         }
+
+        private void ViewRoomsButton_Click(object sender, EventArgs e)
+        {
+            ViewRooms form = new ViewRooms();
+            form.Show();
+        }
     }
 }
