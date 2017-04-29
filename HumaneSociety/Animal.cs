@@ -22,6 +22,8 @@ namespace HumaneSociety
         public Traits TheseTraits { get { return theseTraits; } }
         private Health thisHealth;
         public Health ThisHealth { get { return thisHealth; } }
+        private bool adopted = false;
+        public bool Adopted { get { return adopted; } set { adopted = value; } }
 
         public Animal(string name, string type, double price, DateTime arrival, string color, int height, int weight, int activityLevel, int age, DateTime? shotsDate, string foodType, int foodConsumptionPerWeek, int dishSize, int spaceNeeds)
         {
@@ -46,6 +48,30 @@ namespace HumaneSociety
             theseTraits = new Traits(color, height, weight, activityLevel);
             thisHealth = new Health(age, shotsDate, foodType, foodConsumptionPerWeek, dishSize, spaceNeeds);
             this.animalId = animalId;
+        }
+        public bool CheckMatchKids(Adopter person)
+        {
+            if (person.NumberOfKids > 0 && this.theseTraits.ActivityLevel > 1)
+                return true;
+            else if (person.NumberOfKids == 0 && this.theseTraits.ActivityLevel > 2)
+                return false;
+            else if (person.NumberOfKids > 0 && this.theseTraits.LowActive)
+                return false;
+            else
+                return true;
+
+        }
+        public bool CheckMatchPets(Adopter person)
+        {
+            if (person.NumberOfPets > 0 && this.theseTraits.ActivityLevel > 1)
+                return true;
+            else if (person.NumberOfPets == 0 && this.theseTraits.ActivityLevel > 3)
+                return false;
+            else if (person.NumberOfPets > 0 && this.theseTraits.LowActive)
+                return false;
+            else
+                return true;
+
         }
     }
 }

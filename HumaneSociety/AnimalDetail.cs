@@ -75,6 +75,13 @@ namespace HumaneSociety
             else
                 ShotsLabel.Text = "No Shots";
         }
+
+        private void AdoptButton_Click(object sender, EventArgs e)
+        {
+            AdoptAnimalForm adopt = new AdoptAnimalForm(thisAnimal.AnimalId);
+            adopt.Show();
+            this.Close();
+        }
     }
 
 }

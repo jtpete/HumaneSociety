@@ -66,6 +66,7 @@
             this.AdoptButton.TabIndex = 0;
             this.AdoptButton.Text = "Adopt";
             this.AdoptButton.UseVisualStyleBackColor = false;
+            this.AdoptButton.Click += new System.EventHandler(this.AdoptButton_Click);
             // 
             // ShotButton
             // 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.AddButton = new System.Windows.Forms.Button();
-            this.AdoptButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.MassAddButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
@@ -45,15 +44,6 @@
             this.AddButton.Text = "Add Animal";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // AdoptButton
-            // 
-            this.AdoptButton.Location = new System.Drawing.Point(52, 163);
-            this.AdoptButton.Name = "AdoptButton";
-            this.AdoptButton.Size = new System.Drawing.Size(401, 65);
-            this.AdoptButton.TabIndex = 1;
-            this.AdoptButton.Text = "Adopt Animal";
-            this.AdoptButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -77,7 +67,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(52, 244);
+            this.SearchButton.Location = new System.Drawing.Point(52, 187);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(401, 65);
             this.SearchButton.TabIndex = 3;
@@ -87,7 +77,7 @@
             // 
             // ViewRoomsButton
             // 
-            this.ViewRoomsButton.Location = new System.Drawing.Point(52, 324);
+            this.ViewRoomsButton.Location = new System.Drawing.Point(52, 290);
             this.ViewRoomsButton.Name = "ViewRoomsButton";
             this.ViewRoomsButton.Size = new System.Drawing.Size(401, 65);
             this.ViewRoomsButton.TabIndex = 6;
@@ -104,7 +94,6 @@
             this.Controls.Add(this.MassAddButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.AdoptButton);
             this.Controls.Add(this.AddButton);
             this.Name = "WelcomeMenu";
             this.Text = "Humane Society";
@@ -116,7 +105,6 @@
         #endregion
 
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button AdoptButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button MassAddButton;
         private System.Windows.Forms.Button SearchButton;

@@ -34,6 +34,23 @@ namespace HumaneSociety
             health.UpdateAnimalShot(thisAnimal);
         }
 
+        public void Adopt(int animalId, Adopter person)
+        {
+            AnimalRepository theseAnimals = new AnimalRepository();
+            Animal thisAnimal = ourAnimals.Where(a => a.AnimalId == animalId).Select(a => a).Single();
+            ourAnimals.Remove(thisAnimal);
+            UpdateAdopterInfoWithAnimal(person, thisAnimal);
+            theseAnimals.UpdateAnimalAdoption(thisAnimal.AnimalId);
+        }
+        private void UpdateAdopterInfoWithAnimal(Adopter person, Animal animal)
+        {
+            person.AnimalId = animal.AnimalId;
+            person.AdoptionPrice = animal.Price;
+            person.AdoptionDate = DateTime.Now;
+            AdopterRepository myAdopter = new AdopterRepository();
+            myAdopter.InsertAnAdoption(person);
+        }
+
 
     }
 }
